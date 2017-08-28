@@ -2,19 +2,17 @@ package com.llc.android_lcplugin
 
 import android.app.Application
 import com.lzh.nonview.router.RouterConfiguration
-import com.lzh.nonview.router.anno.RouteConfig
 import com.lzh.router.replugin.plugin.PluginRouterConfiguration
 
 
 
 /**
- * com.llc.android_lcplugin.PluginApplication
+ * com.llc.android_lcplugin.LcPluginApplication
  * @author liulongchao
  * @since 2017/8/26
  */
 
-@RouteConfig(baseUrl = "plugin://")
-class PluginApplication: Application() {
+class LcPluginApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
