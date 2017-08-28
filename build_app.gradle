@@ -1,0 +1,14 @@
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    provided fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile 'com.qihoo360.replugin:replugin-plugin-lib:2.1.7'
+    provided libs.rxjava2
+    compile libs.router_replugin
+    annotationProcessor "com.github.yjfnypeu.Router:router-compiler:${router_version}"
+}

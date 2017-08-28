@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+    defaultConfig {
+        applicationId "com.llc.android_lcplugin"
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+apply from: '../build_app.gradle'
+
+apply plugin: 'replugin-plugin-gradle'
+
+repluginPluginConfig {
+    //插件名
+    pluginName = "plugin"
+    //宿主app的包名
+    hostApplicationId = "com.example.llcgs.android_kotlin"
+    //宿主app的启动activity
+    hostAppLauncherActivity = "com.example.llcgs.android_kotlin.home.MainActivity"
+}
+
