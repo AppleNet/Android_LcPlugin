@@ -14,6 +14,15 @@ class PluginMainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val intent = getIntent()
+        val bundle = intent.extras
+        if (bundle!= null){
+            val name = bundle.getString("name")
+            val age = bundle.getString("age")
+            Log.d("MainActivity", "name: "+name)
+            Log.d("MainActivity", "age: "+age)
+        }
+
         button2.setOnClickListener {
             Observable.just(10)
                     .subscribeOn(Schedulers.io())
